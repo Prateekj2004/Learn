@@ -1,36 +1,60 @@
-# Python cache and compiled files
+# -----------------------------
+# ✅ Python cache & bytecode
+# -----------------------------
 __pycache__/
 *.py[cod]
 *$py.class
 
-# Virtual environment folders
+# -----------------------------
+# ✅ Virtual environments
+# -----------------------------
 venv/
 env/
 ENV/
 .venv/
 
-# Flask-related files
+# -----------------------------
+# ✅ Flask project files
+# -----------------------------
 instance/
 *.db
 *.sqlite3
 
-# Environment variable files
+# -----------------------------
+# ✅ Environment variable files
+# -----------------------------
 .env
 .env.*
 
-# IDEs/editors
+# -----------------------------
+# ✅ IDE/editor folders
+# -----------------------------
 .vscode/
 .idea/
 
-# OS generated files
+# -----------------------------
+# ✅ OS-generated files
+# -----------------------------
 .DS_Store
 Thumbs.db
 
-# Log files
+# -----------------------------
+# ✅ Log files
+# -----------------------------
 *.log
 
-# Jupyter Notebook checkpoints (if used)
+# -----------------------------
+# ✅ Jupyter notebook files
+# -----------------------------
 .ipynb_checkpoints/
 
-# pyproject.toml/__pypackages__/ if using PEP 582
+# -----------------------------
+# ✅ PEP 582 local packages
+# -----------------------------
 __pypackages__/
+
+# -----------------------------
+# ✅ Misc
+# -----------------------------
+*.bak
+*.swp
