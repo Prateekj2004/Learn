@@ -66,3 +66,34 @@ def mark_as_saved():
         return jsonify({"error": "Conversation not found or unauthorized"}), 404
 
     return jsonify({"message": "Conversation marked as saved"}), 200
+
+@convo_bp.route('/delete/<string:conversation_id>', methods=['DELETE'])
+@jwt_required()
+def delete_conversation(conversation_id):
+    user_id = get_jwt_identity()
+
+    result = conversations_collection.delete_one({
+        "_id": ObjectId(conversation_id),
+        "user_id": user_id
+    })
+
+    if result.deleted_count == 1:
+        return jsonify({"message": "Conversation deleted successfully"}), 200
+    else:
+        return jsonify({"error": "Conversation not found or unauthorized"}), 404
+
+@convo_bp.route('/<string:conversation_id>', methods=['GET'])
+@jwt_required()
+def get_conversation(conversation_id):
+    user_id = get_jwt_identity()
+
+    convo = conversations_collection.find_one({
+        "_id": ObjectId(conversation_id),
+        "user_id": user_id
+    })
+
+    if not convo:
+        return jsonify({"error": "Conversation not found"}), 404
+
+    convo["_id"] = str(convo["_id"])
+    return jsonify(convo)

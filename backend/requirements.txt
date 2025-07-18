@@ -1,0 +1,13 @@
+Flask
+Flask-Cors
+Flask-JWT-Extended
+python-dotenv
+pymongo
+Werkzeug
+huggingface_hub
+gTTS
+deep-translator
+langdetect
+pytesseract
+opencv-python
+bcrypt
